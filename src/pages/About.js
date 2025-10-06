@@ -7,9 +7,16 @@ const About = () => {
       <section className="about-hero">
         <div className="container">
           <div className="hero-content">
-            <div className="hero-text">
+            <div className="hero-header">
               <h1>DJ Suru</h1>
               <p className="hero-subtitle">Romulus Virgil Suru</p>
+            </div>
+
+            <div className="hero-image">
+              <img src="/images/despre-mine.jpeg" alt="DJ Suru Portrait" />
+            </div>
+
+            <div className="hero-text">
               <blockquote className="quote-box relative">
                 <svg
                   className="absolute -top-6 -start-8 size-16 text-gray-300"
@@ -48,9 +55,6 @@ const About = () => {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="hero-image">
-              <img src="/images/despre-mine.jpeg" alt="DJ Suru Portrait" />
             </div>
           </div>
         </div>

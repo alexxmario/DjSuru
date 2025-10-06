@@ -302,6 +302,7 @@ const Home = () => {
       <Box
         sx={{
           py: 15,
+          pb: { xs: 25, md: 15 },
           backgroundColor: '#d0d0d0',
           position: 'relative',
           overflow: 'hidden'
