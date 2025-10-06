@@ -100,7 +100,7 @@ function App() {
             <DoorAnimation onAnimationComplete={handleAnimationComplete} />
           )}
           <CardNav
-            logo="/images/logo.png"
+            logo="/images/logo-nav.png"
             logoAlt="DJ SURU Logo"
             items={navigationItems}
             baseColor="rgba(255, 255, 255, 0.85)"

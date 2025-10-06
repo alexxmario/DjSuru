@@ -560,6 +560,10 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -602,20 +606,45 @@ footer {
         transform: translateY(-8px) rotate(-45deg);
     }
 
+    .hero {
+        padding: 80px 0 60px 0;
+        min-height: 50vh;
+    }
+
     .hero-content h1 {
         font-size: 2.5rem;
+        letter-spacing: 1px;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .page-header {
+        padding: 40px 0;
+        min-height: auto;
     }
 
     .page-header h1 {
         font-size: 2rem;
     }
 
+    .page-header p {
+        font-size: 1.1rem;
+    }
+
     h2 {
         font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    section {
+        padding: 40px 0;
     }
 
     .services-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .contact-content {
@@ -625,6 +654,7 @@ footer {
 
     .gallery-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 0.8rem;
     }
 
     .equipment-grid {
@@ -634,6 +664,64 @@ footer {
     .nav-logo-img {
         height: 50px;
         width: 50px;
+    }
+
+    .service-card,
+    .detail-card,
+    .contact-info,
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+        letter-spacing: 0.5px;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .services-grid,
+    .gallery-grid {
+        gap: 1rem;
+    }
+
+    .service-card,
+    .detail-card,
+    .contact-info,
+    .contact-form {
+        padding: 1rem;
+    }
+
+    .cta-button {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+
+    .submit-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
     }
 }
 
@@ -678,7 +766,7 @@ footer {
     }
 }
 
-/* Hide default cursor on desktop */
+/* Hide default cursor on desktop only */
 @media (min-width: 769px) {
     * {
         cursor: none !important;
@@ -686,5 +774,25 @@ footer {
 
     a, button, input, textarea, select {
         cursor: none !important;
+    }
+}
+
+/* Show default cursor on mobile */
+@media (max-width: 768px) {
+    .cursor,
+    .cursor-follower {
+        display: none !important;
+    }
+
+    * {
+        cursor: auto !important;
+    }
+
+    a, button, input, textarea, select {
+        cursor: pointer !important;
+    }
+
+    input, textarea, select {
+        cursor: text !important;
     }
 }

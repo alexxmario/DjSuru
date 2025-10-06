@@ -377,7 +377,7 @@ const Home = () => {
                       icon: "Explorează",
                       label: "",
                       color: "transparent",
-                      onClick: () => navigate('/services')
+                      onClick: () => navigate('/servicii-dj')
                     }
                   ]}
                   className="contact-glass-button"
@@ -481,7 +481,7 @@ const Home = () => {
                 showUserInfo={true}
                 enableTilt={true}
                 enableMobileTilt={false}
-                onContactClick={() => navigate('/about')}
+                onContactClick={() => navigate('/despre-mine')}
               />
             </Box>
 
@@ -542,7 +542,7 @@ const Home = () => {
                       icon: "Află mai multe",
                       label: "",
                       color: "transparent",
-                      onClick: () => navigate('/about')
+                      onClick: () => navigate('/despre-mine')
                     }
                   ]}
                   className="contact-glass-button"

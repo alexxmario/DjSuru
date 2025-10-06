@@ -59,7 +59,7 @@ const Navbar = () => {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', pt: 2 }}>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', px: 2, mb: 2 }}>
-        <img src="/images/logo.png" alt="DJ SURU Logo" style={{ height: '40px', width: '40px' }} />
+        <img src="/images/logo-nav.png" alt="DJ SURU Logo" style={{ height: '40px', width: '40px' }} />
         <IconButton onClick={handleDrawerToggle}>
           <CloseIcon />
         </IconButton>
@@ -126,9 +126,8 @@ const Navbar = () => {
                 }}
               >
                 <img
-                  src="/images/logo.png"
+                  src="/images/logo-nav.png"
                   alt="DJ SURU Logo"
-                  className="nav-logo-img"
                   style={{
                     height: '60px',
                     width: '60px',

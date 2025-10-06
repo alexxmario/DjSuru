@@ -25,3 +25,53 @@
 .navbar-contact-glass::after {
   display: none !important;
 }
+
+/* Mobile drawer logo positioning */
+.MuiDrawer-paper img {
+  transform: translateY(-10px) !important;
+}
+
+/* Mobile/Tablet responsive fixes for navbar logo */
+@media (max-width: 899px) {
+  /* Override any legacy CSS that might interfere */
+  .MuiAppBar-root .MuiToolbar-root {
+    min-height: 90px !important;
+    height: 90px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Ensure logo container is properly positioned */
+  .MuiAppBar-root .MuiToolbar-root .MuiButton-root:first-child {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Ensure logo image is properly sized and positioned */
+  .MuiAppBar-root .MuiToolbar-root .MuiButton-root:first-child img {
+    height: 50px !important;
+    width: 50px !important;
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+    margin: 0 !important;
+  }
+
+  /* Override any legacy navbar styles */
+  .navbar {
+    display: none !important;
+  }
+
+  .nav-logo-img {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+  }
+}
+
