@@ -1,8 +1,21 @@
 import { Box, Typography, Container } from '@mui/material';
+import { useState, useEffect } from 'react';
 import Marquee from './Marquee';
 import ReviewCard from './ReviewCard';
 
 const ReviewsCarousel = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
   const reviews = [
     {
       id: 1,
@@ -60,7 +73,12 @@ const ReviewsCarousel = () => {
           Ce spun cei care au ales DJ Suru
         </Typography>
 
-        <Marquee direction="left" className="py-4" speed={60} pauseOnHover={false}>
+        <Marquee
+          direction="left"
+          className="py-4"
+          speed={isMobile ? 120 : 60}
+          pauseOnHover={false}
+        >
           {reviews.map((review) => (
             <ReviewCard
               key={review.id}

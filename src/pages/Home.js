@@ -135,12 +135,12 @@ const Home = () => {
       <Box
         className="relative flex items-center justify-center overflow-hidden"
         sx={{
-          height: '100vh',
-          minHeight: '800px',
+          height: { xs: '80vh', sm: '90vh', md: '100vh' },
+          minHeight: { xs: '600px', sm: '700px', md: '800px' },
           backgroundImage: 'url(/images/banner.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
+          backgroundAttachment: { xs: 'scroll', md: 'fixed' },
           position: 'relative',
           '&::before': {
             content: '""',
@@ -171,11 +171,13 @@ const Home = () => {
                 color: 'rgba(255, 255, 255, 0.6)',
                 fontFamily: '"Arial", "Helvetica", sans-serif',
                 fontWeight: 'bold',
-                fontSize: { xs: '2.5rem', md: '3.5rem' },
+                fontSize: { xs: '1.8rem', sm: '2.2rem', md: '2.8rem', lg: '3.5rem' },
                 mb: 4,
                 textShadow: '2px 2px 4px rgba(0,0,0,0.7)',
                 fontStyle: 'italic',
-                letterSpacing: '2px'
+                letterSpacing: { xs: '1px', md: '2px' },
+                px: { xs: 2, sm: 4, md: 0 },
+                lineHeight: { xs: 1.2, md: 1.1 }
               }}
             >
               „Muzica e singura limbă pe care o înțeleg toți."
@@ -200,9 +202,14 @@ const Home = () => {
       </Box>
 
       {/* Statistics Section */}
-      <Box className="py-20 bg-gray-50">
+      <Box
+        className="bg-gray-50"
+        sx={{
+          py: { xs: 8, sm: 12, md: 20 }
+        }}
+      >
         <Container maxWidth="lg">
-          <Grid container spacing={6} justifyContent="center">
+          <Grid container spacing={{ xs: 3, sm: 4, md: 6 }} justifyContent="center">
             {[
               {
                 number: 875,
@@ -264,7 +271,7 @@ const Home = () => {
                     <Typography
                       variant="h2"
                       sx={{
-                        fontSize: { xs: '2.5rem', md: '3rem' },
+                        fontSize: { xs: '1.8rem', sm: '2.2rem', md: '2.5rem', lg: '3rem' },
                         fontWeight: 'bold',
                         color: '#000000',
                         mb: 1,
@@ -301,8 +308,8 @@ const Home = () => {
       {/* Services Showcase Section */}
       <Box
         sx={{
-          py: 15,
-          pb: { xs: 25, md: 15 },
+          py: { xs: 15, sm: 20, md: 15 },
+          pb: { xs: 35, sm: 40, md: 15 },
           backgroundColor: '#d0d0d0',
           position: 'relative',
           overflow: 'hidden'
@@ -314,9 +321,9 @@ const Home = () => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
-              gap: 10,
-              mb: 10,
-              minHeight: '600px',
+              gap: { xs: 4, sm: 6, md: 10 },
+              mb: { xs: 6, sm: 8, md: 10 },
+              minHeight: { xs: 'auto', md: '600px' },
               flexDirection: { xs: 'column', md: 'row' }
             }}
           >
@@ -324,7 +331,7 @@ const Home = () => {
               <Typography
                 variant="h2"
                 sx={{
-                  fontSize: { xs: '2rem', md: '3rem' },
+                  fontSize: { xs: '1.6rem', sm: '2rem', md: '2.5rem', lg: '3rem' },
                   fontWeight: 700,
                   mb: 2.5,
                   color: '#333',
@@ -389,10 +396,13 @@ const Home = () => {
               sx={{
                 flex: 1,
                 position: 'relative',
-                height: { xs: '400px', md: '600px' },
+                height: { xs: '500px', sm: '550px', md: '600px' },
                 display: 'flex',
                 justifyContent: 'center',
-                alignItems: 'center'
+                alignItems: 'center',
+                p: { xs: 4, sm: 6, md: 2 },
+                mt: { xs: 12, sm: 15, md: 0 },
+                mb: { xs: 15, sm: 20, md: 0 }
               }}
             >
               <CardSwap
@@ -443,7 +453,7 @@ const Home = () => {
       {/* About Me Section */}
       <Box
         sx={{
-          py: 15,
+          py: { xs: 8, sm: 12, md: 15 },
           backgroundColor: '#d0d0d0',
           position: 'relative',
           overflow: 'hidden'
@@ -455,9 +465,9 @@ const Home = () => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
-              gap: 10,
-              mb: 5,
-              minHeight: '600px',
+              gap: { xs: 4, sm: 6, md: 10 },
+              mb: { xs: 3, sm: 4, md: 5 },
+              minHeight: { xs: 'auto', md: '600px' },
               flexDirection: { xs: 'column', md: 'row' }
             }}
           >
@@ -489,7 +499,7 @@ const Home = () => {
               <Typography
                 variant="h2"
                 sx={{
-                  fontSize: { xs: '2rem', md: '3rem' },
+                  fontSize: { xs: '1.6rem', sm: '2rem', md: '2.5rem', lg: '3rem' },
                   fontWeight: 700,
                   mb: 2.5,
                   color: '#333',
