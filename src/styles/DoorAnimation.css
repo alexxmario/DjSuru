@@ -1,0 +1,94 @@
+.door-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.door-left,
+.door-right {
+  position: absolute;
+  top: 0;
+  width: 50vw;
+  height: 100vh;
+  transition: transform 2s ease-in-out;
+}
+
+.door-left {
+  left: 0;
+  background-color: black;
+  transform-origin: left center;
+}
+
+.door-right {
+  right: 0;
+  background-color: white;
+  transform-origin: right center;
+}
+
+.door-left.open {
+  transform: translateX(-100%);
+}
+
+.door-right.open {
+  transform: translateX(100%);
+}
+
+.logo-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  transition: transform 1s ease-in-out;
+}
+
+.logo-container.spin {
+  animation: logoSpin 2s ease-in-out forwards;
+}
+
+.logo-background {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 3px solid #000000;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.door-container .logo {
+  width: 320px !important;
+  height: 320px !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+  margin-top: 15px;
+}
+
+@keyframes logoSpin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  40% {
+    transform: translate(-50%, -50%) rotate(180deg) scale(1.2);
+    opacity: 1;
+  }
+  60% {
+    transform: translate(-50%, -50%) rotate(270deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-200%, -50%) rotate(360deg) scale(0.8);
+    opacity: 0;
+  }
+}

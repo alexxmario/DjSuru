@@ -1,0 +1,572 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+/* About Page Styles */
+
+/* Hero Section */
+.about-hero {
+  padding: 4rem 0; /* Original padding restored since CardNav is absolutely positioned */
+  background: linear-gradient(rgba(248, 249, 250, 0.5), rgba(248, 249, 250, 0.5)),
+              url('./banner-despre-mine-1.jpeg') center/cover no-repeat;
+  position: relative;
+  min-height: 100vh; /* Ensure full viewport height */
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.hero-text {
+  margin-left: 2rem;
+  margin-top: 4rem;
+}
+
+.hero-image {
+  text-align: center;
+  margin-top: 6rem;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.05);
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #000;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.hero-text h2 {
+  font-size: 2.2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.quote-box {
+  background: hsla(0, 0%, 100%, 0.25);
+  backdrop-filter: blur(0.75em);
+  -webkit-backdrop-filter: blur(0.75em);
+  border: 1px solid hsla(0, 0%, 100%, 0.4);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quote-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.quote-box .relative {
+  position: relative;
+}
+
+.quote-box .absolute {
+  position: absolute;
+}
+
+.quote-box .-top-6 {
+  top: -1.5rem;
+}
+
+.quote-box .-start-8 {
+  left: -2rem;
+}
+
+.quote-box .size-16 {
+  width: 4rem;
+  height: 4rem;
+}
+
+.quote-box .text-gray-300 {
+  color: #d1d5db;
+}
+
+.quote-box .z-10 {
+  z-index: 10;
+}
+
+.quote {
+  font-size: 1.2rem;
+  color: #495057;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.quote:last-child {
+  margin-bottom: 0;
+}
+
+.favorite-song-section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: hsla(0, 0%, 100%, 0.25);
+  backdrop-filter: blur(0.75em);
+  -webkit-backdrop-filter: blur(0.75em);
+  border: 1px solid hsla(0, 0%, 100%, 0.4);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.favorite-song-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.favorite-song-section h3 {
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.song-details {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.album-cover {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+
+.song-info {
+  flex: 1;
+}
+
+.song-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.3rem;
+}
+
+.song-artist {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+}
+
+.intro {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* Journey Timeline */
+.about-journey {
+  padding: 4rem 0;
+  background: white;
+}
+
+.about-journey h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #333;
+}
+
+.journey-timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.journey-timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, #6c757d, #495057);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  display: flex;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+  flex-direction: row;
+}
+
+.timeline-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.timeline-year {
+  flex: 0 0 140px;
+  text-align: center;
+  background: #6c757d;
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0 2rem;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+}
+
+.timeline-content {
+  flex: 1;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content h3 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.timeline-content p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Experience Grid */
+.about-experience {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, rgba(248, 249, 250, 0.3) 0%, rgba(233, 236, 239, 0.3) 100%),
+              url('./banner-despre-mine.jpeg') center/cover no-repeat;
+  position: relative;
+}
+
+.about-experience h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #333;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.experience-card {
+  background: hsla(0, 0%, 100%, 0.25);
+  backdrop-filter: blur(0.75em);
+  -webkit-backdrop-filter: blur(0.75em);
+  border: 1px solid hsla(0, 0%, 100%, 0.4);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.experience-card h3 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+}
+
+.experience-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.experience-card li {
+  color: #333;
+  margin-bottom: 0.8rem;
+  padding: 0.8rem;
+  background: hsla(0, 0%, 100%, 0.7);
+  backdrop-filter: blur(0.5em);
+  -webkit-backdrop-filter: blur(0.5em);
+  border: 1px solid hsla(0, 0%, 100%, 0.6);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.experience-card li:hover {
+  background: hsla(0, 0%, 100%, 0.85);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Philosophy Section */
+.about-philosophy {
+  padding: 4rem 0;
+  background: white;
+}
+
+.philosophy-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.philosophy-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.philosophy-content p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.favorite-song {
+  background: linear-gradient(135deg, #6c757d, #495057);
+  color: white;
+  padding: 2rem;
+  border-radius: 15px;
+  margin-top: 2rem;
+}
+
+.favorite-song h3 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.favorite-song p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Connect Section */
+.about-connect {
+  padding: 4rem 0;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.about-connect h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.about-connect p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.social-platforms {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.platform {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: #333;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.platform i {
+  font-size: 24px;
+  transition: all 0.3s ease;
+}
+
+.platform:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.platform.facebook:hover {
+  background: #1877f2;
+  color: white;
+}
+
+.platform.tiktok:hover {
+  background: #ff0050;
+  color: white;
+}
+
+.platform.youtube:hover {
+  background: #ff0000;
+  color: white;
+}
+
+.platform.mixcloud:hover {
+  background: #8e44ad;
+  color: white;
+}
+
+.website-link {
+  font-size: 1.2rem;
+}
+
+.website-link a {
+  color: #6c757d;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.website-link a:hover {
+  color: #495057;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .quote {
+    font-size: 1.1rem;
+  }
+
+  .journey-timeline::before {
+    left: 30px;
+  }
+
+  .timeline-item {
+    flex-direction: column !important;
+    padding-left: 60px;
+  }
+
+  .timeline-year {
+    position: absolute;
+    left: -60px;
+    top: 0;
+    flex: none;
+    width: 80px;
+    margin: 0;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .timeline-content {
+    margin-left: 0;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .social-platforms {
+    justify-content: center;
+  }
+
+  .platform {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero,
+  .about-journey,
+  .about-experience,
+  .about-philosophy,
+  .about-connect {
+    padding: 2rem 0;
+  }
+
+  .hero-image img {
+    max-width: 280px;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .about-journey h2,
+  .about-experience h2,
+  .about-philosophy h2,
+  .about-connect h2 {
+    font-size: 2rem;
+  }
+
+  .experience-card {
+    padding: 1.5rem;
+  }
+
+  .card-icon {
+    font-size: 2.5rem;
+  }
+}

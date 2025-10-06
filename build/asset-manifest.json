@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a4179145.css",
+    "main.js": "/static/js/main.4df8f49b.js",
+    "static/media/banner-despre-mine.jpeg": "/static/media/banner-despre-mine.82d6139337b8497f7af7.jpeg",
+    "static/media/banner-despre-mine-1.jpeg": "/static/media/banner-despre-mine-1.4554d3972873430db6d1.jpeg",
+    "index.html": "/index.html",
+    "main.a4179145.css.map": "/static/css/main.a4179145.css.map",
+    "main.4df8f49b.js.map": "/static/js/main.4df8f49b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a4179145.css",
+    "static/js/main.4df8f49b.js"
+  ]
+}
