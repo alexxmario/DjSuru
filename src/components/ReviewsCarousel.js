@@ -1,14 +1,19 @@
-import { Box, Typography, Container } from '@mui/material';
-import { useState, useEffect } from 'react';
+import { Box, Typography, Container, IconButton } from '@mui/material';
+import { useState, useEffect, useRef } from 'react';
+import { ChevronLeft, ChevronRight } from '@mui/icons-material';
 import Marquee from './Marquee';
 import ReviewCard from './ReviewCard';
 
 const ReviewsCarousel = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+  const carouselRef = useRef(null);
 
   useEffect(() => {
     const checkIsMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 1024);
     };
 
     checkIsMobile();
@@ -55,6 +60,45 @@ const ReviewsCarousel = () => {
     }
   ];
 
+  // Minimum swipe distance
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe && currentSlide < reviews.length - 1) {
+      setCurrentSlide(currentSlide + 1);
+    }
+    if (isRightSwipe && currentSlide > 0) {
+      setCurrentSlide(currentSlide - 1);
+    }
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % reviews.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + reviews.length) % reviews.length);
+  };
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+  };
+
   return (
     <Box className="py-20 bg-gray-50">
       <Container maxWidth="lg">
@@ -73,21 +117,96 @@ const ReviewsCarousel = () => {
           Ce spun cei care au ales DJ Suru
         </Typography>
 
-        <Marquee
-          direction="left"
-          className="py-4"
-          speed={isMobile ? 120 : 60}
-          pauseOnHover={false}
-        >
-          {reviews.map((review) => (
-            <ReviewCard
-              key={review.id}
-              name={review.name}
-              rating={review.rating}
-              review={review.review}
-            />
-          ))}
-        </Marquee>
+        {isMobile ? (
+          // Mobile/Tablet Swipeable Carousel
+          <Box className="relative">
+            <Box
+              ref={carouselRef}
+              className="overflow-hidden"
+              onTouchStart={onTouchStart}
+              onTouchMove={onTouchMove}
+              onTouchEnd={onTouchEnd}
+            >
+              <Box
+                className="flex transition-transform duration-300 ease-in-out"
+                sx={{
+                  transform: `translateX(-${currentSlide * 100}%)`,
+                  width: `${reviews.length * 100}%`,
+                }}
+              >
+                {reviews.map((review) => (
+                  <Box
+                    key={review.id}
+                    className="w-full flex-shrink-0 px-4"
+                    sx={{ width: `${100 / reviews.length}%` }}
+                  >
+                    <ReviewCard
+                      name={review.name}
+                      rating={review.rating}
+                      review={review.review}
+                    />
+                  </Box>
+                ))}
+              </Box>
+            </Box>
+
+            {/* Navigation Arrows */}
+            <IconButton
+              onClick={prevSlide}
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10"
+              sx={{
+                backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                '&:hover': { backgroundColor: 'rgba(255, 255, 255, 1)' },
+                boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
+              }}
+            >
+              <ChevronLeft />
+            </IconButton>
+            <IconButton
+              onClick={nextSlide}
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10"
+              sx={{
+                backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                '&:hover': { backgroundColor: 'rgba(255, 255, 255, 1)' },
+                boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
+              }}
+            >
+              <ChevronRight />
+            </IconButton>
+
+            {/* Dots Indicator */}
+            <Box className="flex justify-center mt-6 space-x-2">
+              {reviews.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-colors duration-200 ${
+                    index === currentSlide
+                      ? 'bg-gray-800'
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                />
+              ))}
+            </Box>
+          </Box>
+        ) : (
+          // Desktop Marquee
+          <Marquee
+            direction="left"
+            className="py-4"
+            speed={120}
+            pauseOnHover={true}
+          >
+            {reviews.map((review) => (
+              <ReviewCard
+                key={review.id}
+                name={review.name}
+                rating={review.rating}
+                review={review.review}
+              />
+            ))}
+          </Marquee>
+        )}
       </Container>
     </Box>
   );

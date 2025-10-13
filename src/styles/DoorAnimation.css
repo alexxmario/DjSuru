@@ -79,14 +79,6 @@
     transform: translate(-50%, -50%) rotate(0deg) scale(1);
     opacity: 1;
   }
-  40% {
-    transform: translate(-50%, -50%) rotate(180deg) scale(1.2);
-    opacity: 1;
-  }
-  60% {
-    transform: translate(-50%, -50%) rotate(270deg) scale(1);
-    opacity: 1;
-  }
   100% {
     transform: translate(-50%, -50%) rotate(360deg) scale(0.8);
     opacity: 0;
@@ -152,14 +144,6 @@
       transform: translate(-50%, -50%) rotate(0deg) scale(1);
       opacity: 1;
     }
-    40% {
-      transform: translate(-50%, -50%) rotate(180deg) scale(1.1);
-      opacity: 1;
-    }
-    60% {
-      transform: translate(-50%, -50%) rotate(270deg) scale(1);
-      opacity: 1;
-    }
     100% {
       transform: translate(-50%, -50%) rotate(360deg) scale(0.8);
       opacity: 0;
@@ -190,14 +174,6 @@
       transform: translate(-50%, -50%) rotate(0deg) scale(1);
       opacity: 1;
     }
-    40% {
-      transform: translate(-50%, -50%) rotate(180deg) scale(1.05);
-      opacity: 1;
-    }
-    60% {
-      transform: translate(-50%, -50%) rotate(270deg) scale(1);
-      opacity: 1;
-    }
     100% {
       transform: translate(-50%, -50%) rotate(360deg) scale(0.7);
       opacity: 0;
@@ -221,14 +197,6 @@
   @keyframes logoSpin {
     0% {
       transform: translate(-50%, -50%) rotate(0deg) scale(1);
-      opacity: 1;
-    }
-    40% {
-      transform: translate(-50%, -50%) rotate(180deg) scale(1.05);
-      opacity: 1;
-    }
-    60% {
-      transform: translate(-50%, -50%) rotate(270deg) scale(1);
       opacity: 1;
     }
     100% {
