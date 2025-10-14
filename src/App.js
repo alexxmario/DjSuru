@@ -7,6 +7,7 @@ import DoorAnimation from './components/DoorAnimation';
 import CardNav from './components/CardNav';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
+import CookieConsent from './components/CookieConsent';
 import Home from './pages/Home';
 import About from './pages/About';
 import Gallery from './pages/Gallery';
@@ -122,6 +123,7 @@ function App() {
             </Routes>
           </main>
           <Footer />
+          <CookieConsent />
         </div>
       </Router>
     </ThemeProvider>
