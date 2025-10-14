@@ -1,6 +1,5 @@
-import { Box, Typography, Container, IconButton } from '@mui/material';
+import { Box, Typography, Container } from '@mui/material';
 import { useState, useEffect, useRef } from 'react';
-import { ChevronLeft, ChevronRight } from '@mui/icons-material';
 import Marquee from './Marquee';
 import ReviewCard from './ReviewCard';
 
@@ -79,25 +78,16 @@ const ReviewsCarousel = () => {
     const isLeftSwipe = distance > minSwipeDistance;
     const isRightSwipe = distance < -minSwipeDistance;
 
-    if (isLeftSwipe && currentSlide < reviews.length - 1) {
-      setCurrentSlide(currentSlide + 1);
+    if (isLeftSwipe) {
+      // Next slide, loop to first if at end
+      setCurrentSlide((prev) => (prev + 1) % reviews.length);
     }
-    if (isRightSwipe && currentSlide > 0) {
-      setCurrentSlide(currentSlide - 1);
+    if (isRightSwipe) {
+      // Previous slide, loop to last if at beginning
+      setCurrentSlide((prev) => (prev - 1 + reviews.length) % reviews.length);
     }
   };
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % reviews.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + reviews.length) % reviews.length);
-  };
-
-  const goToSlide = (index) => {
-    setCurrentSlide(index);
-  };
 
   return (
     <Box className="py-20 bg-gray-50">
@@ -118,7 +108,7 @@ const ReviewsCarousel = () => {
         </Typography>
 
         {isMobile ? (
-          // Mobile/Tablet Swipeable Carousel
+          // Mobile/Tablet Simple Swipeable Carousel
           <Box className="relative">
             <Box
               ref={carouselRef}
@@ -126,6 +116,17 @@ const ReviewsCarousel = () => {
               onTouchStart={onTouchStart}
               onTouchMove={onTouchMove}
               onTouchEnd={onTouchEnd}
+              sx={{
+                cursor: 'grab',
+                userSelect: 'none',
+                WebkitUserSelect: 'none',
+                MozUserSelect: 'none',
+                msUserSelect: 'none',
+                touchAction: 'pan-x',
+                '&:active': {
+                  cursor: 'grabbing'
+                }
+              }}
             >
               <Box
                 className="flex transition-transform duration-300 ease-in-out"
@@ -148,45 +149,6 @@ const ReviewsCarousel = () => {
                   </Box>
                 ))}
               </Box>
-            </Box>
-
-            {/* Navigation Arrows */}
-            <IconButton
-              onClick={prevSlide}
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10"
-              sx={{
-                backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                '&:hover': { backgroundColor: 'rgba(255, 255, 255, 1)' },
-                boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
-              }}
-            >
-              <ChevronLeft />
-            </IconButton>
-            <IconButton
-              onClick={nextSlide}
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10"
-              sx={{
-                backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                '&:hover': { backgroundColor: 'rgba(255, 255, 255, 1)' },
-                boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
-              }}
-            >
-              <ChevronRight />
-            </IconButton>
-
-            {/* Dots Indicator */}
-            <Box className="flex justify-center mt-6 space-x-2">
-              {reviews.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-colors duration-200 ${
-                    index === currentSlide
-                      ? 'bg-gray-800'
-                      : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
-                />
-              ))}
             </Box>
           </Box>
         ) : (
