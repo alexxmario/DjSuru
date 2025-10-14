@@ -132,14 +132,16 @@ const ReviewsCarousel = () => {
                 className="flex transition-transform duration-300 ease-in-out"
                 sx={{
                   transform: `translateX(-${currentSlide * 100}%)`,
-                  width: `${reviews.length * 100}%`,
                 }}
               >
                 {reviews.map((review) => (
                   <Box
                     key={review.id}
                     className="w-full flex-shrink-0 px-4"
-                    sx={{ width: `${100 / reviews.length}%` }}
+                    sx={{
+                      minWidth: '100%',
+                      width: '100%'
+                    }}
                   >
                     <ReviewCard
                       name={review.name}
