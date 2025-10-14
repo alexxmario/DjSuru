@@ -115,6 +115,13 @@ const Mixes = () => {
       name: 'Merry Christmas',
       artist: 'Dj Suru',
       image: encodeURI('/audio/album-images/[BraveDown.Com] [Dj Suru - Merry Christmas] [1759502930] .jpg')
+    },
+    {
+      id: 5,
+      src: encodeURI('/audio/[BraveDown.Com] [Dj Suru - Populara VS Dance Remix] [1760465069] .mp3'),
+      name: 'Populara VS Dance Remix',
+      artist: 'Dj Suru',
+      image: encodeURI('/audio/album-images/[BraveDown.Com] [Dj Suru - Populara VS Dance Remix] [1760465069] .jpg')
     }
   ];
 
