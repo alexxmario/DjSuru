@@ -1,9 +1,13 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import './About.css';
 
 const About = () => {
   return (
     <>
+      <Helmet>
+        <title>DJ Suru - Despre mine</title>
+      </Helmet>
       <section className="about-hero">
         <div className="container">
           <div className="hero-content">

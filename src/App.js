@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import { HelmetProvider } from 'react-helmet-async';
 import DoorAnimation from './components/DoorAnimation';
 import CardNav from './components/CardNav';
 import Footer from './components/Footer';
@@ -91,10 +92,11 @@ function App() {
   ];
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <CustomCursor />
-      <Router>
+    <HelmetProvider>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <CustomCursor />
+        <Router>
         <div className="App">
           {showAnimation && (
             <DoorAnimation onAnimationComplete={handleAnimationComplete} />
@@ -123,6 +125,7 @@ function App() {
         </div>
       </Router>
     </ThemeProvider>
+    </HelmetProvider>
   );
 }
 

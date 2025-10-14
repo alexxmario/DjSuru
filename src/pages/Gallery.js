@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Container, Typography, Box, ImageList, ImageListItem, Modal, IconButton } from '@mui/material';
 import { Close } from '@mui/icons-material';
+import { Helmet } from 'react-helmet-async';
 
 const Gallery = () => {
   const [images, setImages] = useState([]);
@@ -119,6 +120,9 @@ const Gallery = () => {
 
   return (
     <>
+      <Helmet>
+        <title>DJ Suru - Galerie</title>
+      </Helmet>
       {/* Hero Section */}
       <Box
         className="relative flex items-center justify-center"

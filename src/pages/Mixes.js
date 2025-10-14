@@ -6,6 +6,7 @@ import {
   Box,
   Fade
 } from '@mui/material';
+import { Helmet } from 'react-helmet-async';
 import {
   FavoriteOutlined,
   CelebrationOutlined,
@@ -132,6 +133,9 @@ const Mixes = () => {
 
   return (
     <>
+      <Helmet>
+        <title>DJ Suru - Mixuri</title>
+      </Helmet>
       {/* Hero Section */}
       <Box
         sx={{

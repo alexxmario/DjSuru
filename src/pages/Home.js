@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import {
   Container,
   Typography,
@@ -131,6 +132,9 @@ const Home = () => {
 
   return (
     <>
+      <Helmet>
+        <title>DJ Suru - Acasă</title>
+      </Helmet>
       {/* Hero Section with Banner */}
       <Box
         className="relative flex items-center justify-center overflow-hidden"

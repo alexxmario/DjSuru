@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import './Services.css';
 import SplitText from '../components/SplitText';
 import GlassIcons from '../components/GlassIcons';
@@ -84,6 +85,9 @@ const Services = () => {
 
   return (
     <>
+      <Helmet>
+        <title>DJ Suru - Servicii</title>
+      </Helmet>
       <section className="services-carousel-section">
         <div className="carousel-container">
           <div
