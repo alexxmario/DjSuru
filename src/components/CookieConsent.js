@@ -83,7 +83,17 @@ const CookieConsent = () => {
           >
             Folosim cookie-uri pentru a îmbunătăți experiența ta pe site-ul nostru,
             pentru a analiza traficul și pentru a personaliza conținutul.
-            Continuând să navighezi pe site, ești de acord cu utilizarea cookie-urilor.
+            Continuând să navighezi pe site, ești de acord cu utilizarea cookie-urilor.{' '}
+            <a
+              href="/politica-cookie"
+              style={{
+                color: '#667eea',
+                textDecoration: 'underline',
+                fontWeight: 500
+              }}
+            >
+              Află mai multe
+            </a>
           </Typography>
         </Box>
 

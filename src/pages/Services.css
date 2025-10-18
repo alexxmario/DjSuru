@@ -109,8 +109,17 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center;
   transition: transform 0.3s ease;
+}
+
+/* Specific positioning for nunta and botez banners to show faces better */
+.service-banner.nunta {
+  object-position: center top;
+}
+
+.service-banner.botez {
+  object-position: center 30%;
 }
 
 

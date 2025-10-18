@@ -73,6 +73,56 @@
   border-color: #8e44ad;
 }
 
+.footer-anpc {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.anpc-link {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.anpc-link:hover {
+  transform: scale(1.05);
+}
+
+.anpc-logo {
+  height: 100px;
+  width: auto;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.anpc-logo:hover {
+  opacity: 1;
+}
+
+.sal-link {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.sal-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .footer-copyright {
   text-align: center;
   padding-top: 1rem;
@@ -81,9 +131,33 @@
 }
 
 .footer-copyright p {
-  margin: 0;
+  margin: 0 0 1rem 0;
   font-size: 0.9rem;
   color: #b0b0b0;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #b0b0b0;
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.footer-links .separator {
+  color: #666;
+  font-size: 0.8rem;
 }
 
 @media (min-width: 768px) {

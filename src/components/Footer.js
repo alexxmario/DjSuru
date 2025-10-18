@@ -23,8 +23,25 @@ const Footer = () => {
               </a>
             </div>
           </div>
+          <div className="footer-anpc">
+            <a href="https://anpc.ro" target="_blank" rel="noopener noreferrer" className="anpc-link">
+              <img src="/images/anpc.png" alt="ANPC" className="anpc-logo" />
+            </a>
+            <a href="https://reclamatiisal.anpc.ro/" target="_blank" rel="noopener noreferrer" className="sal-link">
+              SAL
+            </a>
+          </div>
           <div className="footer-copyright">
             <p>&copy; 2025 DJ Suru. Toate drepturile rezervate.</p>
+            <div className="footer-links">
+              <a href="/politica-confidentialitate">Politica de confidențialitate</a>
+              <span className="separator">|</span>
+              <a href="/politica-cookie">Politica privind cookie-urile</a>
+              <span className="separator">|</span>
+              <a href="/termeni-conditii">Termeni și condiții</a>
+              <span className="separator">|</span>
+              <a href="https://gdpr.eu" target="_blank" rel="noopener noreferrer">GDPR</a>
+            </div>
           </div>
         </div>
       </div>

@@ -14,6 +14,9 @@ import Gallery from './pages/Gallery';
 import Mixes from './pages/Mixes';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import CookiePolicy from './pages/CookiePolicy';
+import TermsAndConditions from './pages/TermsAndConditions';
 import './styles/tailwind.css';
 import './styles/App.css';
 
@@ -120,6 +123,9 @@ function App() {
               <Route path="/mixuri" element={<Mixes />} />
               <Route path="/servicii-dj" element={<Services />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/politica-confidentialitate" element={<PrivacyPolicy />} />
+              <Route path="/politica-cookie" element={<CookiePolicy />} />
+              <Route path="/termeni-conditii" element={<TermsAndConditions />} />
             </Routes>
           </main>
           <Footer />

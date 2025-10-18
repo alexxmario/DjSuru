@@ -100,7 +100,7 @@ const Services = () => {
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="service-banner"
+                    className={`service-banner ${service.id}`}
                   />
                 </div>
               </div>
