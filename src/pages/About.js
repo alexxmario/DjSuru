@@ -6,7 +6,10 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>DJ Suru - Despre mine</title>
+        <title>Despre DJ Suru - Romulus Virgil Suru | DJ Profesionist pentru Evenimente</title>
+        <meta name="description" content="Cunoaște-l pe DJ Suru (Romulus Virgil Suru), DJ profesionist cu experiență în organizarea și sonorizarea evenimentelor de nunți, botezuri și corporate în România." />
+        <meta property="og:title" content="Despre DJ Suru - DJ Profesionist pentru Evenimente" />
+        <meta property="og:description" content="DJ cu experiență și pasiune pentru muzică, specializat în crearea atmosferei perfecte pentru toate tipurile de evenimente." />
       </Helmet>
       <section className="about-hero">
         <div className="container">

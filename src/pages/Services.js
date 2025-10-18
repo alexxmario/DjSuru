@@ -86,7 +86,10 @@ const Services = () => {
   return (
     <>
       <Helmet>
-        <title>DJ Suru - Servicii</title>
+        <title>DJ Suru - Servicii DJ pentru Nunți, Botezuri, Majorat și Evenimente Corporate</title>
+        <meta name="description" content="Servicii DJ complete pentru nunți, botezuri, majorat și evenimente corporate. Echipamente profesionale, muzică personalizată și atmosferă perfectă pentru fiecare eveniment." />
+        <meta property="og:title" content="Servicii DJ Profesionale - DJ Suru" />
+        <meta property="og:description" content="DJ profesionist cu servicii complete pentru toate tipurile de evenimente. Sonorizare, lumini și muzică adaptată perfect pentru evenimentul tău." />
       </Helmet>
       <section className="services-carousel-section">
         <div className="carousel-container">

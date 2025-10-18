@@ -133,7 +133,10 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>DJ Suru - Acasă</title>
+        <title>DJ Suru - Servicii DJ Profesionale pentru Nunți, Botezuri și Evenimente în România</title>
+        <meta name="description" content="DJ Suru oferă servicii DJ profesionale pentru nunți, botezuri, majorat și evenimente corporate în România. Muzică de calitate, atmosferă perfectă și experiență de neuitat." />
+        <meta property="og:title" content="DJ Suru - Servicii DJ Profesionale pentru Evenimente" />
+        <meta property="og:description" content="DJ profesionist pentru nunți, botezuri, majorat și evenimente corporate. Muzică de calitate și atmosferă perfectă pentru evenimentul tău special." />
       </Helmet>
       {/* Hero Section with Banner */}
       <Box

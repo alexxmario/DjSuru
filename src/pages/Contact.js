@@ -87,7 +87,10 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>DJ Suru - Contact</title>
+        <title>Contact DJ Suru - Rezervă Servicii DJ pentru Evenimentul Tău</title>
+        <meta name="description" content="Contactează DJ Suru pentru rezervarea serviciilor DJ pentru nunta, botezul sau evenimentul tău. Răspuns rapid și oferte personalizate pentru toate tipurile de evenimente." />
+        <meta property="og:title" content="Contact DJ Suru - Rezervări Evenimente" />
+        <meta property="og:description" content="Rezervă servicii DJ profesionale pentru evenimentul tău. Contactează DJ Suru pentru oferte personalizate și consultanță gratuită." />
       </Helmet>
       <Box
         sx={{
