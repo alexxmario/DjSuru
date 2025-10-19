@@ -190,6 +190,25 @@ const CardNav = ({
     if (el) cardsRef.current[i] = el;
   };
 
+  const handleNavClick = () => {
+    // Scroll to top when any navigation link is clicked
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+
+    // Close the menu after navigation
+    if (isExpanded) {
+      const tl = tlRef.current;
+      if (tl) {
+        setIsHamburgerOpen(false);
+        setJustOpened(false);
+        tl.eventCallback('onReverseComplete', () => setIsExpanded(false));
+        tl.reverse();
+      }
+    }
+  };
+
   return (
     <div
       ref={containerRef}
@@ -212,12 +231,12 @@ const CardNav = ({
           </div>
 
           <div className="logo-container">
-            <Link to="/">
+            <Link to="/" onClick={handleNavClick}>
               <img src={logo} alt={logoAlt} className="logo" />
             </Link>
           </div>
 
-          <Link to="/contact">
+          <Link to="/contact" onClick={handleNavClick}>
             <button
               type="button"
               className="card-nav-cta-button"
@@ -237,6 +256,7 @@ const CardNav = ({
               ref={setCardRef(idx)}
               style={{ backgroundColor: item.bgColor, color: item.textColor }}
               aria-label={item.links[0]?.ariaLabel}
+              onClick={handleNavClick}
             >
               <div className="nav-card-label">{item.label}</div>
               <GoArrowUpRight className="nav-card-link-icon" aria-hidden="true" />

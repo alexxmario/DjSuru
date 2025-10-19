@@ -95,7 +95,7 @@ const About = () => {
               </div>
             </div>
 
-            <div className="timeline-item">
+            <div className="timeline-item recunoastere-item">
               <div className="timeline-year">Recunoaștere</div>
               <div className="timeline-content">
                 <h3>Festivalul Bachus & TVR 1</h3>

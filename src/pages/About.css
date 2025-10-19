@@ -507,6 +507,15 @@
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
   }
+
+  .timeline-year {
+    font-size: 0.9rem;
+  }
+
+  /* Specific styling for Recunoaștere bubble */
+  .recunoastere-item .timeline-year {
+    font-size: 0.8rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -609,14 +618,23 @@
     height: 4rem;
     margin: 0;
     padding: 0;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    line-height: 1.2;
+    line-height: 1.1;
     z-index: 3;
+  }
+
+  /* Specific styling for Recunoaștere bubble on mobile */
+  .recunoastere-item .timeline-year {
+    width: 5rem;
+    height: 5rem;
+    left: -1.5rem;
+    font-size: 0.65rem;
+    line-height: 1;
   }
 
   .timeline-content {
@@ -762,8 +780,18 @@
     left: -0.8rem;
     width: 3.5rem;
     height: 3.5rem;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     padding: 0.2rem;
+    line-height: 1;
+  }
+
+  /* Specific styling for Recunoaștere bubble on small mobile */
+  .recunoastere-item .timeline-year {
+    width: 4.5rem;
+    height: 4.5rem;
+    left: -1.3rem;
+    font-size: 0.55rem;
+    line-height: 0.95;
   }
 
   .timeline-content {
@@ -863,8 +891,18 @@
     left: -0.7rem;
     width: 3rem;
     height: 3rem;
-    font-size: 0.6rem;
+    font-size: 0.5rem;
     padding: 0.1rem;
+    line-height: 0.9;
+  }
+
+  /* Specific styling for Recunoaștere bubble on extra small mobile */
+  .recunoastere-item .timeline-year {
+    width: 4rem;
+    height: 4rem;
+    left: -1.2rem;
+    font-size: 0.45rem;
+    line-height: 0.85;
   }
 
   .experience-card {

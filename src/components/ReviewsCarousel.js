@@ -138,10 +138,13 @@ const ReviewsCarousel = () => {
                 {reviews.map((review) => (
                   <Box
                     key={review.id}
-                    className="w-full flex-shrink-0 px-4"
+                    className="w-full flex-shrink-0 px-4 flex justify-center"
                     sx={{
                       minWidth: '100%',
-                      width: '100%'
+                      width: '100%',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center'
                     }}
                   >
                     <ReviewCard

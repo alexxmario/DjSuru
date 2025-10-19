@@ -1,7 +1,7 @@
 import { Star } from '@mui/icons-material';
 
 const ReviewCard = ({ name, rating, review }) => (
-  <div className="w-80 p-6 bg-white rounded-lg border-2 border-black shadow-lg">
+  <div className="w-80 max-w-sm mx-auto p-6 bg-white rounded-lg border-2 border-black shadow-lg">
     <div className="mb-4">
       <h3 className="font-bold text-lg text-black mb-2">{name}</h3>
       <div className="flex gap-1">
