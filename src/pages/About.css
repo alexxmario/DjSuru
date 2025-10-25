@@ -192,6 +192,8 @@
 .about-journey {
   padding: 4rem 0;
   background: white;
+  position: relative;
+  overflow: hidden;
 }
 
 .about-journey h2 {
@@ -267,6 +269,65 @@
 .timeline-content p {
   color: #666;
   line-height: 1.6;
+}
+
+/* Journey Images - Post-it Style */
+.journey-image {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15),
+              0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  filter: brightness(1.05) saturate(1.1);
+  border: 5px solid #ffeaa7;
+  z-index: 1;
+}
+
+.journey-image:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25),
+              0 6px 16px rgba(0, 0, 0, 0.15);
+  z-index: 5;
+}
+
+/* Individual positioning and rotation for each image */
+.journey-image-1 {
+  transform: rotate(-8deg);
+  top: 20px;
+  left: -110px;
+}
+
+.journey-image-2 {
+  transform: rotate(12deg);
+  top: 30px;
+  right: -120px;
+}
+
+.journey-image-3 {
+  transform: rotate(-15deg);
+  top: 10px;
+  left: -130px;
+}
+
+.journey-image-4 {
+  transform: rotate(9deg);
+  top: 40px;
+  right: -100px;
+}
+
+.journey-image-5 {
+  transform: rotate(-6deg);
+  top: 25px;
+  left: -120px;
+}
+
+.journey-image-6 {
+  transform: rotate(14deg);
+  top: 15px;
+  right: -115px;
 }
 
 /* Experience Grid */
@@ -516,6 +577,42 @@
   .recunoastere-item .timeline-year {
     font-size: 0.8rem;
   }
+
+  /* Journey images responsive - tablet */
+  .journey-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .journey-image-1 {
+    left: -70px;
+    top: 15px;
+  }
+
+  .journey-image-2 {
+    right: -75px;
+    top: 25px;
+  }
+
+  .journey-image-3 {
+    left: -85px;
+    top: 5px;
+  }
+
+  .journey-image-4 {
+    right: -60px;
+    top: 35px;
+  }
+
+  .journey-image-5 {
+    left: -75px;
+    top: 20px;
+  }
+
+  .journey-image-6 {
+    right: -70px;
+    top: 10px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -648,6 +745,13 @@
 
   .timeline-content p {
     font-size: 0.95rem;
+  }
+
+  /* Journey images responsive - mobile */
+  .journey-image {
+    width: 80px;
+    height: 80px;
+    display: none; /* Hide images on mobile for better readability */
   }
 
   .experience-grid {

@@ -72,6 +72,7 @@ const About = () => {
           <h2>Parcursul meu profesional</h2>
           <div className="journey-timeline">
             <div className="timeline-item">
+              <img src="/images/journey/o_noua_pasiune.jpeg" alt="O nouă pasiune" className="journey-image journey-image-1" />
               <div className="timeline-year">O nouă pasiune</div>
               <div className="timeline-content">
                 <h3>Discoteca Toxic</h3>
@@ -80,6 +81,7 @@ const About = () => {
             </div>
 
             <div className="timeline-item">
+              <img src="/images/journey/invatare.jpeg" alt="Învățare" className="journey-image journey-image-2" />
               <div className="timeline-year">Învățare</div>
               <div className="timeline-content">
                 <h3>Club Extrem Focșani</h3>
@@ -88,6 +90,7 @@ const About = () => {
             </div>
 
             <div className="timeline-item">
+              <img src="/images/journey/dezvoltare.jpeg" alt="Dezvoltare" className="journey-image journey-image-3" />
               <div className="timeline-year">Dezvoltare</div>
               <div className="timeline-content">
                 <h3>Club Musicbox & Club Hypnotic</h3>
@@ -96,6 +99,7 @@ const About = () => {
             </div>
 
             <div className="timeline-item recunoastere-item">
+              <img src="/images/journey/recunoastere.jpeg" alt="Recunoaștere" className="journey-image journey-image-4" />
               <div className="timeline-year">Recunoaștere</div>
               <div className="timeline-content">
                 <h3>Festivalul Bachus & TVR 1</h3>
@@ -104,6 +108,7 @@ const About = () => {
             </div>
 
             <div className="timeline-item">
+              <img src="/images/journey/2015.jpeg" alt="2015" className="journey-image journey-image-5" />
               <div className="timeline-year">2015</div>
               <div className="timeline-content">
                 <h3>Acreditare profesională</h3>
@@ -112,6 +117,7 @@ const About = () => {
             </div>
 
             <div className="timeline-item">
+              <img src="/images/journey/2017.jpeg" alt="2017" className="journey-image journey-image-6" />
               <div className="timeline-year">2017</div>
               <div className="timeline-content">
                 <h3>Super DJ Team</h3>
