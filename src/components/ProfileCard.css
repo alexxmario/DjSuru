@@ -383,7 +383,7 @@
 .pc-details {
   width: 100%;
   position: absolute;
-  top: 0.2em;
+  top: 2.7em;
   display: flex;
   flex-direction: column;
 }
@@ -403,7 +403,7 @@
 .pc-details p {
   font-weight: 600;
   position: relative;
-  top: -12px;
+  top: 0;
   white-space: nowrap;
   font-size: 16px;
   margin: 0 auto;
@@ -448,7 +448,7 @@
   }
 
   .pc-details {
-    top: 2em;
+    top: 3.3em;
   }
 
   .pc-details h3 {
@@ -457,6 +457,7 @@
 
   .pc-details p {
     font-size: 14px;
+    top: 2px;
   }
 
   .pc-user-info {
@@ -496,7 +497,7 @@
   }
 
   .pc-details {
-    top: 1.5em;
+    top: 3.2em;
   }
 
   .pc-details h3 {
@@ -505,7 +506,7 @@
 
   .pc-details p {
     font-size: 12px;
-    top: -8px;
+    top: 3px;
   }
 
   .pc-user-info {

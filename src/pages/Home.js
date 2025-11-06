@@ -403,13 +403,13 @@ const Home = () => {
               sx={{
                 flex: 1,
                 position: 'relative',
-                height: { xs: '500px', sm: '550px', md: '600px' },
+                height: { xs: '420px', sm: '520px', md: '600px' },
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
                 p: { xs: 4, sm: 6, md: 2 },
-                mt: { xs: 12, sm: 15, md: 0 },
-                mb: { xs: 15, sm: 20, md: 0 }
+                mt: { xs: 3, sm: 8, md: 0 },
+                mb: { xs: 6, sm: 10, md: 0 }
               }}
             >
               <CardSwap
@@ -482,10 +482,10 @@ const Home = () => {
               sx={{
                 flex: 1,
                 position: 'relative',
-                height: { xs: '400px', md: '600px' },
+                height: { xs: 'auto', md: '600px' },
                 display: 'flex',
                 justifyContent: 'center',
-                alignItems: 'center'
+                alignItems: { xs: 'flex-start', md: 'center' }
               }}
             >
               <ProfileCard
