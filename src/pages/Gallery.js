@@ -9,103 +9,36 @@ const Gallery = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
-    const importImages = async () => {
+    const fetchImages = async () => {
+      try {
+        const response = await fetch('/images/gallery/gallery-manifest.json', {
+          cache: 'no-cache',
+        });
 
-      // Import all images from the gallery folder
-      const imageFiles = [
-        'WhatsApp Image 2025-10-02 at 22.26.03 (1).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.26.03.jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.45 (1).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.45.jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.46 (1).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.46 (2).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.46.jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.47 (1).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.47.jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.48.jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.49 (1).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.49 (2).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.49 (3).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.49.jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.50 (1).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.50 (2).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.50 (3).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.50.jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.51 (1).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.51 (2).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.51.jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.54 (1).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.54 (2).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.54 (3).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.54 (4).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.54.jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.55 (1).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.55 (2).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.55 (3).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.55.jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.56 (1).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.56 (2).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.56 (3).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.56 (4).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.56.jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.57 (1).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.57 (2).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.57 (3).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.57 (4).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.57 (5).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.57.jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.58 (1).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.58 (2).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.58 (3).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.58 (4).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.59 (1).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.59 (2).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.59 (3).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.59 (4).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.31.59.jpeg',
-        'WhatsApp Image 2025-10-02 at 22.35.58.jpeg',
-        'WhatsApp Image 2025-10-02 at 22.35.59 (1).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.35.59 (2).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.35.59 (3).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.35.59.jpeg',
-        'WhatsApp Image 2025-10-02 at 22.36.00 (1).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.36.00 (2).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.36.00 (3).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.36.00.jpeg',
-        'WhatsApp Image 2025-10-02 at 22.36.01 (1).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.36.01 (2).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.36.01.jpeg',
-        'WhatsApp Image 2025-10-02 at 22.36.02 (1).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.36.02 (2).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.36.02 (3).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.36.02 (4).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.36.02.jpeg',
-        'WhatsApp Image 2025-10-02 at 22.36.04 (1).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.36.04 (3).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.36.04 (4).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.36.04 (5).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.36.04.jpeg',
-        'WhatsApp Image 2025-10-02 at 22.36.05 (1).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.36.05 (2).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.36.05 (3).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.36.05 (4).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.36.05.jpeg',
-        'WhatsApp Image 2025-10-02 at 22.36.06 (1).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.36.06 (2).jpeg',
-        'WhatsApp Image 2025-10-02 at 22.36.06.jpeg'
-      ];
+        if (!response.ok) {
+          throw new Error(`Failed to load gallery manifest: ${response.status}`);
+        }
 
-      // Create image objects with src paths
-      const imageArray = imageFiles.map((filename, index) => ({
-        id: index,
-        src: `/images/gallery/${filename}`,
-        alt: `DJ Suru Event ${index + 1}`
-      }));
+        const manifest = await response.json();
 
-      setImages(imageArray);
+        if (!Array.isArray(manifest)) {
+          throw new Error('Gallery manifest is not an array');
+        }
+
+        // Map the manifest entries to the structure expected by the component
+        const imageArray = manifest.map((filename, index) => ({
+          id: filename,
+          src: `/images/gallery/${filename}`,
+          alt: `DJ Suru Event ${index + 1}`
+        }));
+
+        setImages(imageArray);
+      } catch (error) {
+        console.error('Error loading gallery manifest:', error);
+      }
     };
 
-    importImages();
+    fetchImages();
   }, []);
 
   const handleImageClick = (image) => {
