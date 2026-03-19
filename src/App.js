@@ -8,6 +8,7 @@ import CardNav from './components/CardNav';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
 import CookieConsent from './components/CookieConsent';
+import WhatsAppButton from './components/WhatsAppButton';
 import Home from './pages/Home';
 import About from './pages/About';
 import Gallery from './pages/Gallery';
@@ -130,6 +131,7 @@ function App() {
           </main>
           <Footer />
           <CookieConsent />
+          <WhatsAppButton />
         </div>
       </Router>
     </ThemeProvider>

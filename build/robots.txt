@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://djsuru.ro/sitemap.xml
+
+# Disallow cache and build files
+Disallow: /node_modules/
+Disallow: /build/
+Disallow: /.git/
+Disallow: /src/
+
+# Allow important pages
+Allow: /
+Allow: /despre-mine
+Allow: /galerie
+Allow: /mixuri
+Allow: /servicii-dj
+Allow: /contact
+Allow: /politica-confidentialitate
+Allow: /politica-cookie
+Allow: /termeni-conditii
+
+# Crawl delay (optional)
+Crawl-delay: 1
