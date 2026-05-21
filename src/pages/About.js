@@ -112,7 +112,7 @@ const About = () => {
               <div className="timeline-year">2015</div>
               <div className="timeline-content">
                 <h3>Acreditare profesională</h3>
-                <p>Devin DJ acreditat, absolvind școala DJ HighWay și intru în ADJPR (Asociația DJ-ilor Profesioniști din România)</p>
+                <p>Devin DJ acreditat, absolvind școala DJ High Way și intru în ADJPR (Asociația DJ-ilor Profesioniști din România)</p>
               </div>
             </div>
 
